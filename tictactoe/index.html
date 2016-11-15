@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="TicTacToe">
+  <head>
+    <script src="bundle.js"></script>
+  </head>
+  <body ng-controller="TicTacToeController">
+    <h1 class="text-center">Tic Tac Toe</h1>
+    <div class="row">
+      <div class="container col-sm-6 col-sm-offset-3">
+        <grid></grid>
+        <div class="row">
+          <button type="button" class="btn btn-success btn-lg col-sm-12" ng-click="startGame()" ng-hide="isGameInProgress()">
+            {{buttonDisplay()}}
+          </button>
+        </div>
+      </div>
+      <div class="row col-sm-1 col-sm-offset-1">
+        <h2>Scores</h2>
+        <h4 class="col-sm-offset-1">Player 1:</h4>
+        <h5 class="col-sm-offset-3">{{player1Score()}}</h5>
+        <h4 class="col-sm-offset-1">Player 2:</h4>
+        <h5 class="col-sm-offset-3">{{player2Score()}}</h5>
+      </div>
+    </div>
+  </body>
+</html>
