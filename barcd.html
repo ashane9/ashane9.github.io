@@ -22,7 +22,7 @@
 <script type="text/javascript">
 function read(a)
 {
-	alert(a);
+	document.getElementById("demo").innerHTML= a;
 }	
 
 function load()
@@ -40,5 +40,7 @@ function load()
 <body>
 <input type="file" capture="camera" accept="image/*" id="file-input" name="cameraInput">
 <button onclick='load()'>decode</button>
+	
+<p id="demo"></p>
 </body>
 </html>
