@@ -25,11 +25,24 @@ function read(a)
 	alert(a);
 }	
 
-function load()
-{
-	const camerainput = document.getElementById('cameraInput');
+function load(i)
+{	
 	qrcode.callback = read;
-	qrcode.decode(camerainput);
+	qrcode.decode(i);
+}
+
+input.onchange = function () {
+  var file = input.files[0];
+  displayAsImage(file); // see Example 7
+};
+	
+function displayAsImage(file) {
+  var imgURL = URL.createObjectURL(file),
+
+  img.onload = function() {
+    URL.revokeObjectURL(imgURL);
+  };
+  load(imgURL);
 }
 </script>
 </head>
