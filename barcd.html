@@ -27,8 +27,9 @@ function read(a)
 
 function load()
 {
+	const camerainput = document.getElementById('cameraInput');
 	qrcode.callback = read;
-	qrcode.decode("https://lh6.googleusercontent.com/sN5AnEiYXWOI8k5YyHwlo8HlGDev761mzP0yf85aa7QzlWksL4khuosdEfF-eAS_psc_8LEcIbhYPhwsW87W=w1920-h945");
+	qrcode.decode(camerainput);
 }
 </script>
 </head>
