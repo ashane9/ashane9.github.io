@@ -25,30 +25,20 @@ function read(a)
 	alert(a);
 }	
 
-function load(i)
-{	
+function load()
+{
+    var fileInput = document.getElementById('file-input');
+    var files = fileInput.files;
+    var imgurl = URL.createObjectURL(files[0]);
 	qrcode.callback = read;
-	qrcode.decode(i);
-}
+	qrcode.decode(imgurl);
+} 
 
-input.onchange = function () {
-  var file = input.files[0];
-  displayAsImage(file); // see Example 7
-};
-	
-function displayAsImage(file) {
-  var imgURL = URL.createObjectURL(file),
-
-  img.onload = function() {
-    URL.revokeObjectURL(imgURL);
-  };
-  load(imgURL);
-}
 </script>
 </head>
 
 <body>
-<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput">
+<input type="file" capture="camera" accept="image/*" id="file-input" name="cameraInput">
 <button onclick='load()'>decode</button>
 </body>
 </html>
